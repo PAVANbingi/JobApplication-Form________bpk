@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +7,10 @@
 }
 
 body {
-  background-color: #ccc;
+  font-family: "Poppins", sans-serif;
+  background-color:#fdfefe /* Light background for better contrast */
 }
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -15,15 +19,22 @@ body {
 .apply_box {
   max-width: 600px;
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(135deg, #00aeef, #ed1c24); /* Trendy gradient */
   margin: 0 auto;
   margin-top: 50px;
-  box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
-  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apply_box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .title_small {
   font-size: 20px;
+  color: #fff; /* White text for contrast */
 }
 
 .form_container {
@@ -32,6 +43,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
+
 .form_control {
   display: flex;
   flex-direction: column;
@@ -40,51 +52,66 @@ body {
 label {
   font-size: 15px;
   margin-bottom: 5px;
+  color: #fff; /* White label text for better readability */
 }
 
 input,
 select,
 textarea {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus {
-  outline-color: red;
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ed1c24;
+  box-shadow: 0 0 8px rgba(237, 28, 36, 0.4);
 }
 
 .button_container {
   display: flex;
-
   justify-content: flex-end;
   margin-top: 20px;
 }
+
 button {
-  background-color: red;
+  background-color: #ed1c24;
   border: transparent solid 2px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   color: white;
   border-radius: 8px;
-  transition: 0.3s ease-in;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
+
 button:hover {
-  background-color: #ccc;
-  border: 2px solid red;
-  color: black;
-  transition: 0.3s ease-out;
+  background-color: #fff;
+  border: 2px solid #ed1c24;
+  color: #ed1c24;
+  transform: translateY(-3px);
   cursor: pointer;
 }
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .textarea_control {
   grid-column: 1 / span 2;
 }
+
 .textarea_control textarea {
   width: 100%;
+  resize: vertical;
 }
 
 @media (max-width: 460px) {
   .textarea_control {
     grid-column: 1 / span 1;
   }
-} ;
+}
